@@ -14,11 +14,9 @@ export default function index() {
     <ParallaxScrollView
           headerBackgroundColor={{ light: '#de7b7bff', dark: '#6A1212' }}
           headerImage={
-            <IconSymbol
-              size={310}
-              color="#808080"
-              name="chevron.left.forwardslash.chevron.right"
-              style={styles.headerImage}
+            <Image
+              source={require('@/assets/images/logo-darkm.png')}
+              style={{ width: 500, height: 500, alignSelf: 'center' }}
             />
           }>
           <ThemedView style={styles.titleContainer}>
@@ -81,6 +79,7 @@ export default function index() {
         bottom: -90,
         left: -35,
         position: 'absolute',
+        opacity: 0.5,
       },
       titleContainer: {
         flexDirection: 'row',
