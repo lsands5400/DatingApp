@@ -14,7 +14,7 @@ export default function index() {
     <ParallaxScrollView
           headerBackgroundColor={{ light: '#de7b7bff', dark: '#6A1212' }}
           headerImage={
-            <Image
+            <Image 
               source={require('@/assets/images/logo-darkm.png')}
               style={{ width: 500, height: 500, alignSelf: 'center' }}
             />
