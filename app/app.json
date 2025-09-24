@@ -4,7 +4,7 @@
     "slug": "status-dating",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/logodarkm.png",
     "scheme": "statusdating",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -23,19 +23,19 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/logodarkm.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/logodarkm.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
+          "backgroundColor": "#6A1212",
           "dark": {
-            "backgroundColor": "#000000"
+            "backgroundColor": "#6A1212"
           }
         }
       ]

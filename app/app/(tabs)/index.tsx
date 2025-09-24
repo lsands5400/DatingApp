@@ -12,7 +12,7 @@ import { Fonts } from '@/constants/theme';
 export default function index() {
   return (
     <ParallaxScrollView
-          headerBackgroundColor={{ light: '#de7b7bff', dark: '#601f22ff' }}
+          headerBackgroundColor={{ light: '#de7b7bff', dark: '#6A1212' }}
           headerImage={
             <IconSymbol
               size={310}
