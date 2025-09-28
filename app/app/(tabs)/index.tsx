@@ -12,7 +12,7 @@ import { Fonts } from '@/constants/theme';
 export default function index() {
   return (
     <ParallaxScrollView
-          headerBackgroundColor={{ light: '#de7b7bff', dark: '#6A1212' }}
+          headerBackgroundColor={{ light: '#6A1212', dark: '#6A1212' }}
           headerImage={
             <Image 
               source={require('@/assets/images/logo-darkm.png')}
@@ -25,7 +25,7 @@ export default function index() {
               style={{
                 fontFamily: Fonts.rounded,
               }}>
-              Welcome to Dating App!
+              Welcome to Status.
             </ThemedText>
           </ThemedView>
           <ThemedText>The dating app for intellectuals.</ThemedText>
@@ -35,15 +35,20 @@ export default function index() {
               This is our new dating app for impressive people.
               It's still in the beta testing phase, so it may be a little rough around the edges.
             </ThemedText>
-            {/* For when I can link the TikTok and Instagram pages
-
-            <ExternalLink href="https://reactnative.dev/docs/images">
-              <ThemedText type="link">Learn more</ThemedText> comment
-            </ExternalLink>*/}
+            <ExternalLink href="https://www.tiktok.com/@status_dating">
+              <ThemedText type="link">Follow us on TikTok</ThemedText>
+            </ExternalLink>
+            <ExternalLink href="https://www.instagram.com/status_dating/">
+              <ThemedText type="link">Follow us on Instagram</ThemedText>
+            </ExternalLink>
           </Collapsible>
           <Collapsible title="How do I join?">
             <ThemedText>
-              You can navigate to the "Apply" tab to submit an application. Once the rest of the app is up, we will review applications on a rolling basis.
+              You can navigate to the form at 
+              <ExternalLink href="https://tinyurl.com/betadate">
+              <ThemedText type="link"> this link</ThemedText>
+            </ExternalLink>
+              . Once the rest of the app is up, we will review applications on a rolling basis.
             </ThemedText>
           </Collapsible>
           <Collapsible title='What makes someone "impressive"?'>
@@ -52,9 +57,9 @@ export default function index() {
             </ThemedText>
             <ThemedText>
               <ul>
-              <li>Coffee</li>
-              <li>Tea</li>
-              <li>Milk</li>
+              <li>Studying or otherwise pursuing a complex topic you're passionate about</li>
+              <li>Exploring the world</li>
+              <li>Starting your own business or company</li>
               </ul>
             </ThemedText>
             <ThemedText>

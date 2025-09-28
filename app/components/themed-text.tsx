@@ -35,26 +35,31 @@ export function ThemedText({
 
 const styles = StyleSheet.create({
   default: {
+    fontFamily: 'Baskerville',
     fontSize: 16,
     lineHeight: 24,
   },
   defaultSemiBold: {
+    fontFamily: 'Baskerville',
     fontSize: 16,
     lineHeight: 24,
     fontWeight: '600',
   },
   title: {
+    fontFamily: 'Baskerville',
     fontSize: 32,
     fontWeight: 'bold',
     lineHeight: 32,
   },
   subtitle: {
+    fontFamily: 'Baskerville',
     fontSize: 20,
     fontWeight: 'bold',
   },
   link: {
+    fontFamily: 'Baskerville',
     lineHeight: 30,
     fontSize: 16,
-    color: '#0a7ea4',
+    color: '#b31a1aff',
   },
 });
