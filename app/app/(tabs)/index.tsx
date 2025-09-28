@@ -89,5 +89,6 @@ export default function index() {
       titleContainer: {
         flexDirection: 'row',
         gap: 8,
+        fontFamily: 'Baskerville'
       },
     });
