@@ -16,7 +16,7 @@ export default function index() {
           headerImage={
             <Image 
               source={require('@/assets/images/logo-darkm.png')}
-              style={{ width: 500, height: 500, alignSelf: 'center' }}
+              style={{ width: 500, height: 500, alignSelf: 'center', opacity: 0.2 }}
             />
           }>
           <ThemedView style={styles.titleContainer}>
