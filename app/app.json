@@ -11,7 +11,7 @@
     "ios": {
       "supportsTablet": true,
     "web": {
-        "bundler": "metro",
+        "bundler": "webpack",
         "output": "static"
       }
     },
