@@ -9,11 +9,7 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true,
-    "web": {
-        "bundler": "webpack",
-        "output": "static"
-      }
+      "supportsTablet": true
     },
     
     "android": {
@@ -26,10 +22,13 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
+
     "web": {
+      "bundler": "webpack",
       "output": "static",
       "favicon": "./assets/images/logo-darkm.png"
     },
+
     "plugins": [
       "expo-router",
       [
