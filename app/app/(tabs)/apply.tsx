@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#61dafb',
+    backgroundColor: '#FFD4D4',
   },
   modalView: {
     margin: 20,
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   buttonOpen: {
-    backgroundColor: '#F194FF',
+    backgroundColor: '#6A1212',
   },
   buttonClose: {
     backgroundColor: '#2196F3',

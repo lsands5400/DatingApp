@@ -23,7 +23,7 @@ export default function index() {
             <ThemedText
               type="title"
               style={{
-                fontFamily: Fonts.rounded,
+                fontFamily: 'baskerville',
               }}>
               Welcome to Status.
             </ThemedText>
@@ -33,7 +33,12 @@ export default function index() {
           <Collapsible title="What is this?">
             <ThemedText>
               This is our new dating app for impressive people.
-              It's still in the beta testing phase, so it may be a little rough around the edges.
+              It's still in development, but the main features will include
+              <ul>
+              <li>In-app games to help start conversations</li>
+              <li>Post-date surveys to help us match users</li>
+              <li>A human-centered application process</li>
+              </ul>
             </ThemedText>
             <ExternalLink href="https://www.tiktok.com/@status_dating">
               <ThemedText type="link">Follow us on TikTok</ThemedText>
