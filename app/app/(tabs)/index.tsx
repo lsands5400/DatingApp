@@ -8,6 +8,8 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Fonts } from '@/constants/theme';
+import SignOutButton from '@/components/social-auth-buttons/sign-out-button'
+import { useAuthContext } from '@/hooks/use-auth-context'
 
 export default function index() {
   return (
@@ -18,6 +20,14 @@ export default function index() {
               source={require('@/assets/images/logo-darkm.png')}
               style={{ width: 500, height: 500, alignSelf: 'center', opacity: 0.2 }}
             />
+          }
+          headerText={
+            <ThemedText
+              type="title"
+              style={{ fontFamily: 'baskerville' }}
+            >
+            Welcome to Status
+            </ThemedText>
           }>
           <ThemedView style={styles.titleContainer}>
             <ThemedText
