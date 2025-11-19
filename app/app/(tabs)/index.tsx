@@ -24,9 +24,10 @@ export default function index() {
           headerText={
             <ThemedText
               type="title"
-              style={{ fontFamily: 'baskerville' }}
+              style={{ fontFamily: 'baskerville', textAlign: 'center', opacity: 0.5, 
+                width: '100%', height: '100%', justifyContent: 'center', fontSize: 150}}
             >
-            Welcome to Status
+            Status
             </ThemedText>
           }>
           <ThemedView style={styles.titleContainer}>

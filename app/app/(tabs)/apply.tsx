@@ -5,6 +5,7 @@ import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { color } from 'react-native-elements/dist/helpers';
 
 export function Apply() {
   return (
@@ -13,10 +14,9 @@ export function Apply() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: '#61dafb',
       }}
     >
-      <Text>Welcome to Dating App!</Text>
+      <Text style={{color: 'blue'}}>Welcome to Dating App!</Text>
     </View>
   );
 }
