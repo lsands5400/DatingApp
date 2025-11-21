@@ -4,9 +4,11 @@ import type { Session } from '@supabase/supabase-js'
 import { PropsWithChildren, useEffect, useState } from 'react'
 
 export default function AuthProvider({ children }: PropsWithChildren) {
-  const [session, setSession] = useState<Session | undefined | null>()
-  const [profile, setProfile] = useState<any>()
+  const [session, setSession] = useState<Session | null>(null)
+  const [profile, setProfile] = useState<any>(null)
   const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [error, setError] = useState<string | null>(null)
+
 
   // Fetch the session once, and subscribe to auth state changes
   useEffect(() => {
@@ -64,6 +66,27 @@ export default function AuthProvider({ children }: PropsWithChildren) {
     fetchProfile()
   }, [session])
 
+  const signIn = async (email: string, password: string) => {
+    setError(null)
+
+    const response = await supabase.auth.signInWithPassword({ email, password })
+    
+    if (response.error) {
+      setError(response.error.message)
+      return false
+    }
+
+    setSession(response.data?.session ?? null)
+    return true
+  }
+
+  const signOut = async () => {
+    setError(null)
+    const { error } = await supabase.auth.signOut()
+    if (error) setError(error.message)
+    setSession(null)
+  }
+
   return (
     <AuthContext.Provider
       value={{
@@ -71,6 +94,9 @@ export default function AuthProvider({ children }: PropsWithChildren) {
         isLoading,
         profile,
         isLoggedIn: session != undefined,
+        signIn,
+        signOut,
+        error,
       }}
     >
       {children}
