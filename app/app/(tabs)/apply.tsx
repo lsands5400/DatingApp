@@ -1,6 +1,6 @@
 import { Link } from 'expo-router';
 import React, {useState} from 'react';
-import { Alert, Modal, StyleSheet, Text, View, Pressable, TextInput} from 'react-native';
+import { Alert, Modal, StyleSheet, Text, View, Pressable, TextInput, Linking} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
 import { ThemedText } from '@/components/themed-text';
@@ -23,6 +23,9 @@ export function Apply() {
 
 export default function ApplicationModal() {
     const [modalVisible, setModalVisible] = useState(false);
+    const handlePress = () => {
+    Linking.openURL('https://forms.gle/NVtUXh6VPqJM83rZ8');
+    };
   return (
     <SafeAreaProvider>
         <SafeAreaView style={styles.centeredView}>
@@ -48,7 +51,7 @@ export default function ApplicationModal() {
             <Pressable
             style={[styles.button, styles.buttonOpen]}
             onPress={() => setModalVisible(true)}>
-            <Text style={styles.textStyle}>Submit an application</Text>
+            <Text style={styles.textStyle} onPress={handlePress}>Submit an application</Text>
             </Pressable>
         </SafeAreaView>
     </SafeAreaProvider>
