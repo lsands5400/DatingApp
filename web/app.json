@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "status-dating",
+    "slug": "status-dating",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo-darkm.png",
+    "scheme": "statusdating",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.lsands5400.statusdating"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/logo-darkm.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logo-darkm.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#6A1212",
+          "dark": {
+            "backgroundColor": "#6A1212"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
