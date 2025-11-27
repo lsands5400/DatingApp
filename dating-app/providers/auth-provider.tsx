@@ -84,7 +84,6 @@ export default function AuthProvider({ children }: PropsWithChildren) {
     setError(null)
     const { error } = await supabase.auth.signOut()
     if (error) setError(error.message)
-    setSession(null)
   }
 
   
@@ -95,7 +94,7 @@ export default function AuthProvider({ children }: PropsWithChildren) {
         session,
         isLoading,
         profile,
-        isLoggedIn: session != undefined,
+        isLoggedIn: session !== null,
         signIn,
         signOut,
         error,

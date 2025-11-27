@@ -10,6 +10,7 @@ import AuthProvider from '@/providers/auth-provider'
 
 import * as eva from '@eva-design/eva';
 import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
+import { SplashScreenController } from '@/components/splash-screen-controller';
 
 export const unstable_settings = {
   anchor: '(tabs)',
@@ -21,16 +22,26 @@ function RootNavigator() {
 
   return (
     <Stack>
+      {/* Protected app routes */}
       <Stack.Protected guard={isLoggedIn}>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(app)" options={{ headerShown: false }} />
+        <Stack.Screen name="profile" options={{ headerShown: false }} />
       </Stack.Protected>
+
+      {/* Auth routes (only when logged out) */}
       <Stack.Protected guard={!isLoggedIn}>
         <Stack.Screen name="login" options={{ headerShown: false }} />
+        <Stack.Screen name="signup" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack.Protected>
-      <Stack.Screen name="+not-found" />
+
+      {/* Other routes */}
+      <Stack.Screen name="not-found" />
+      <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
     </Stack>
   )
 }
+
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -38,6 +49,7 @@ export default function RootLayout() {
   const [loaded] = useFonts({
     BaskervvilleSC: require('../assets/fonts/BaskervvilleSC-VariableFont_wght.ttf'),
   })
+  
   if (!loaded) {
     // Async font loading only occurs in development.
     return null
@@ -47,11 +59,8 @@ export default function RootLayout() {
     <ApplicationProvider {...eva} theme={eva.light}>
       <AuthProvider>
         <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-          <Stack>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-            <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-          </Stack>
+          <SplashScreenController />
+          <RootNavigator />
           <StatusBar style="auto" />
         </ThemeProvider>
       </AuthProvider>
