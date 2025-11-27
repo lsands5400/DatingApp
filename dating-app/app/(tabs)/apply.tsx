@@ -19,13 +19,10 @@ export default function Apply() {
           }}>
           Apply for Status.
       </ThemedText>
-      <Card>
-        <>
-          <ThemedText> Are you interesting?</ThemedText>
-          <ThemedText>Are you looking for someone who will intellectually stimulate you?</ThemedText>
-          <ThemedText>Are you looking for someone peer-reviewed?</ThemedText>
-        </>
-      </Card>
+  
+      <ThemedText> Are you interesting?</ThemedText>
+      <ThemedText>Are you looking for someone who will intellectually stimulate you?</ThemedText>
+      <ThemedText>Are you looking for someone peer-reviewed?</ThemedText>
       
       <Pressable style={[styles.button, styles.buttonOpen]}>
         <Text style={styles.textStyle} onPress={handlePress}>Submit an application</Text>

@@ -1,5 +1,6 @@
 import React from 'react';
-import Icon from '@expo/vector-icons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { Stack, router } from 'expo-router';
 import { useAuthContext } from '@/hooks/use-auth-context';
 
@@ -80,7 +81,7 @@ export default function LoginScreen() {
             <>
             {/* EMAIL FIELD */}
               <View style={styles.inputContainer}>
-                <Icon name="mail-outline" size={25} style={styles.icon} />
+                <MaterialCommunityIcons name="email-heart-outline" size={25} style={styles.icon} />
                 <TextInput
                   style={styles.input}
                   placeholder="Email"
@@ -97,7 +98,7 @@ export default function LoginScreen() {
 
               {/* PASSWORD FIELD */}
               <View style={styles.inputContainer}>
-                <Icon name="lock-closed-outline" size={25} style={styles.icon} />
+                <MaterialIcons name="password" size={25} style={styles.icon} />
                 <TextInput
                   style={styles.input}
                   placeholder="Password"
