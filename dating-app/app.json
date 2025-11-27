@@ -25,7 +25,8 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/logo-darkm.png"
+      "favicon": "./assets/images/logo-darkm.png",
+      "build": { "babel": { "include": [ "@ui-kitten/components" ] } }
     },
     "plugins": [
       "expo-router",
