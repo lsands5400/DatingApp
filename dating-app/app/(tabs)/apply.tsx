@@ -4,7 +4,7 @@ import { Text, Pressable, StyleSheet, Linking } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Card } from '@rneui/themed'; // TODO: whats wrong with this
+// import { Card } from '@rneui/themed'; // TODO: whats wrong with this
 
 export default function Apply() {
   const handlePress = () => {
