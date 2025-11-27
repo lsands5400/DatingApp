@@ -87,6 +87,8 @@ export default function AuthProvider({ children }: PropsWithChildren) {
     setSession(null)
   }
 
+  
+
   return (
     <AuthContext.Provider
       value={{

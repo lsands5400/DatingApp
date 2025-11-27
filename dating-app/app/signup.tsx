@@ -1,7 +1,7 @@
 import React from 'react';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { Stack, router } from 'expo-router';
+import { router } from 'expo-router';
 import { useAuthContext } from '@/hooks/use-auth-context';
 
 import { Formik } from 'formik';
@@ -9,8 +9,7 @@ import * as yup from 'yup';
 
 import { 
   StyleSheet, 
-  View, 
-  Pressable, 
+  View,  
   Image, 
   Text, 
   TextInput, 
@@ -19,7 +18,6 @@ import {
 import { ThemedText } from '@/components/themed-text'
 import { ThemedView } from '@/components/themed-view'
 
-// TODO: Make sure only valid emails can log in
 
 // -----------------------------
 // Yup validation schema
@@ -33,6 +31,10 @@ const loginValidationSchema = yup.object().shape({
     .string()
     .min(6, ({ min }) => `Password must be at least ${min} characters`)
     .required('Password is required'),
+
+//   TODO: add unqiue sign up code 
+
+    
 });
 
 // -----------------------------
@@ -57,8 +59,6 @@ export default function LoginScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Login' }} />
-
       <ThemedView style={styles.container}>
         <Image source={require('@/assets/images/logo-darkm.png')} style={styles.logo} />
         <ThemedText type="title" style={styles.title}>

@@ -9,7 +9,7 @@ export default function Auth() {
 
   async function signInWithEmail() {
     setLoading(true)
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signInWithPassword({ // TODO: fix to only take valid log in info
       email: email,
       password: password,
     })
