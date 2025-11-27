@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
   },
 
   inputContainer: {
-    width: '100%',
+    width: '40%',
     height: 50,
     backgroundColor: '#f1f1f1',
     borderRadius: 10,
@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    width: '100%',
+    width: '40%',
     height: 50,
     backgroundColor: '#6A1212',
     borderRadius: 10,

@@ -1,9 +1,10 @@
 import { Image } from 'expo-image';
 import React, {useState} from 'react';
-import { Text, Pressable, StyleSheet, Linking } from 'react-native';
+import { Text, Pressable, StyleSheet, Linking, View, ScrollView } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+
 // import { Card } from '@rneui/themed'; // TODO: whats wrong with this
 
 export default function Apply() {
@@ -11,51 +12,69 @@ export default function Apply() {
     Linking.openURL('https://forms.gle/NVtUXh6VPqJM83rZ8');
   };
   return (
-    <ThemedView style={styles.container}>
-      <ThemedText
-          type="title"
-          style={{
-            fontFamily: 'baskerville',
-          }}>
-          Apply for Status.
-      </ThemedText>
-  
-      <ThemedText> Are you interesting?</ThemedText>
-      <ThemedText>Are you looking for someone who will intellectually stimulate you?</ThemedText>
-      <ThemedText>Are you looking for someone peer-reviewed?</ThemedText>
-      
-      <Pressable style={[styles.button, styles.buttonOpen]}>
-        <Text style={styles.textStyle} onPress={handlePress}>Submit an application</Text>
-      </Pressable>
+    <ScrollView>
+      <ThemedView style={styles.container}>
+        <View style={{padding:20}}>
+          <ThemedText
+              type="title"
+              style={{
+                fontFamily: 'baskerville',
+              }}>
+              Apply for Status.
+          </ThemedText>
+        </View>
 
-      <ThemedText
-          type="title">
-          How It Works
-        </ThemedText>
-      <ThemedText>
-        Currently, the application is a Google form. You can fill out the Google form and 
-        answer all the questions. Once you submit, a member of our team will review your submission. 
-        If you are approved, we will send you a code that you can use to create an account. From there, 
-        you will be able to freely match and interact with other users.
-      </ThemedText>
+        <View style={{padding:20}}>
+          <ThemedText>Are you interesting?</ThemedText>
+          <ThemedText>Are you looking for someone who will intellectually stimulate you?</ThemedText>
+          <ThemedText>Are you looking for someone peer-reviewed?</ThemedText>
+        </View>
 
-      <ThemedText
-          type="title">
-          What We Are Looking For
-        </ThemedText>
-      <ThemedText>
-        You don't have to be a Nobel Laureate to apply. We simply want to ensure that we are presenting
-        serious options to you and our other users. We want some proof that you have passions and goals
-        that are of a caliber that we desire for our users. Let us know if you have an interesting hobby, 
-        a hidden talent, or a grand plan for your life. The application offers a place to submit supplementary 
-        files and links, so feel free to upload art or websites or documents.
-      </ThemedText>
+        <View style={{padding:20}}>
+          <Pressable style={[styles.button, styles.buttonOpen]}>
+            <Text style={styles.textStyle} onPress={handlePress}>Submit an application</Text>
+          </Pressable>
+        </View>
 
-      <Image
-          source={require('@/assets/images/logo-darkm.png')}
-          style={{ width: 100, height: 100, alignSelf: 'center' }}
-        />
-    </ThemedView>  
+        <View style={{padding:20}}>
+          <ThemedText
+              type="title">
+              How It Works
+            </ThemedText>
+        </View>
+
+        <View style={{padding:20, width:600}}>
+          <ThemedText>
+            Currently, the application is a Google form. You can fill out the Google form and 
+            answer all the questions. Once you submit, a member of our team will review your submission. 
+            If you are approved, we will send you a code that you can use to create an account. From there, 
+            you will be able to freely match and interact with other users.
+          </ThemedText>
+        </View>
+
+        <View style={{padding:20}}>
+          <ThemedText
+              type="title">
+              What We Are Looking For
+            </ThemedText>
+        </View>
+
+        <View style={{padding:20, width:600}}>
+          <ThemedText>
+            You don't have to be a Nobel Laureate to apply. We simply want to ensure that we are presenting
+            serious options to you and our other users. We want some proof that you have passions and goals
+            that are of a caliber that we desire for our users. Let us know if you have an interesting hobby, 
+            a hidden talent, or a grand plan for your life. The application offers a place to submit supplementary 
+            files and links, so feel free to upload art or websites or documents.
+          </ThemedText>
+        </View>
+
+        <Image
+            source={require('@/assets/images/logo-darkm.png')}
+            style={{ width: 100, height: 100, alignSelf: 'center' }}
+          />
+      </ThemedView>  
+    </ScrollView>
   );
 }
 
