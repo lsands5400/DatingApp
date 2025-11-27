@@ -1,0 +1,2 @@
+- sometimes you just have to delete everything and start over
+- npm install is necessary before trying to run anything
