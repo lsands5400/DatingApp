@@ -1,9 +1,9 @@
-import { Link } from 'expo-router';
 import React, {useState} from 'react';
 import {StyleSheet, Text, Pressable, Linking} from 'react-native';
 import { Image } from 'expo-image';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { Card } from 'react-native-elements';
 
 export default function Apply() {
   const handlePress = () => {
@@ -18,10 +18,14 @@ export default function Apply() {
           }}>
           Apply for Status.
       </ThemedText>
-      <ThemedText> Are you interesting?</ThemedText>
-      <ThemedText>Are you looking for someone who will intellectually stimulate you?</ThemedText>
-      <ThemedText>Are you looking for someone peer-reviewed?</ThemedText>
-
+      <Card>
+        <>
+          <ThemedText> Are you interesting?</ThemedText>
+          <ThemedText>Are you looking for someone who will intellectually stimulate you?</ThemedText>
+          <ThemedText>Are you looking for someone peer-reviewed?</ThemedText>
+        </>
+      </Card>
+      
       <Pressable style={[styles.button, styles.buttonOpen]}>
         <Text style={styles.textStyle} onPress={handlePress}>Submit an application</Text>
       </Pressable>
