@@ -6,6 +6,7 @@ export type AuthData = {
   profile?: any | null
   isLoading: boolean
   isLoggedIn: boolean
+  signUp:(email: string, password: string) => Promise<boolean>
   signIn: (email: string, password: string) => Promise<boolean>
   signOut: () => Promise<void>
   error?: string | null
@@ -16,6 +17,7 @@ export const AuthContext = createContext<AuthData>({
   profile: undefined,
   isLoading: true,
   isLoggedIn: false,
+  signUp: async (email: string, password: string) => true,
   signIn: async (email: string, password: string) => true,
   signOut: async () => {},
   error: null,

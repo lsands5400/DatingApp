@@ -66,6 +66,47 @@ export default function AuthProvider({ children }: PropsWithChildren) {
     fetchProfile()
   }, [session])
 
+  // ------------------------------------
+  // Sign Up
+  // ------------------------------------
+  async function signUp(email: string, password: string): Promise<boolean> {
+    setError(null);
+
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    if (error) {
+      setError(error.message);
+      return false;
+    }
+
+    const user = data.user ?? data.session?.user;
+
+    if (!user) {
+      setError("Supabase did not return a user ID after signup.");
+      return false;
+    }
+
+    // Create profile row
+    const { error: insertError } = await supabase.from('profiles').insert({
+      id: user.id,
+      email,
+      created_at: new Date(),
+    });
+
+    if (insertError) {
+      setError(insertError.message);
+      return false;
+  }
+
+  return true;
+  }
+
+  // ------------------------------------
+  // Sign In
+  // ------------------------------------
   const signIn = async (email: string, password: string) => {
     setError(null)
 
@@ -80,6 +121,9 @@ export default function AuthProvider({ children }: PropsWithChildren) {
     return true
   }
 
+  // ------------------------------------
+  // Sign Out
+  // ------------------------------------
   const signOut = async () => {
     setError(null)
     const { error } = await supabase.auth.signOut()
@@ -95,6 +139,7 @@ export default function AuthProvider({ children }: PropsWithChildren) {
         isLoading,
         profile,
         isLoggedIn: session !== null,
+        signUp,
         signIn,
         signOut,
         error,

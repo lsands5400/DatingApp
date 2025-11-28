@@ -22,7 +22,7 @@ import { ThemedView } from '@/components/themed-view'
 // -----------------------------
 // Yup validation schema
 // -----------------------------
-const loginValidationSchema = yup.object().shape({
+const signUpValidationSchema = yup.object().shape({
   email: yup
     .string()
     .email('Please enter a valid email')
@@ -40,21 +40,21 @@ const loginValidationSchema = yup.object().shape({
 // -----------------------------
 // Main Component
 // -----------------------------
-export default function LoginScreen() {
-  const { signIn, error } = useAuthContext();
+export default function SignUpScreen() {
+  const { signUp, error } = useAuthContext();
 
   async function handleLogin(values: { email: string; password: string }) {
     const { email, password } = values;
 
-    const success = await signIn(email, password);
+    const success = await signUp(email, password);
     
     if (!success) {
       console.log(error);
       return;
     }
 
-    // Navigate to home screen on success
-    router.push('/apply');
+    // Navigate to profile on success
+    router.push('/profile');
   }
 
   return (
@@ -62,11 +62,11 @@ export default function LoginScreen() {
       <ThemedView style={styles.container}>
         <Image source={require('@/assets/images/logo-darkm.png')} style={styles.logo} />
         <ThemedText type="title" style={styles.title}>
-          Login
+          Sign Up
         </ThemedText>
       
         <Formik
-          validationSchema={loginValidationSchema}
+          validationSchema={signUpValidationSchema}
           initialValues={{ email: '', password: '' }}
           onSubmit={handleLogin}
         >
@@ -114,24 +114,19 @@ export default function LoginScreen() {
                 <Text style={styles.errorText}>{errors.password}</Text>
               )}
 
-              {/* FORGOT PASSWORD
-              <TouchableOpacity onPress={() => router.push('/Forget')}>              
-                <Text style={styles.forgotPassword}>Forgot Password?</Text>
-              </TouchableOpacity> */}
-
-              {/* LOGIN BUTTON */}
+              {/* SIGN UP BUTTON */}
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.push('/profile')}
+                onPress={handleSubmit} 
                 disabled={!isValid}
               >
-                <Text style={styles.buttonText}>Login</Text>
+                <Text style={styles.buttonText}>Sign Up</Text>
               </TouchableOpacity>
 
               {/* NAVIGATE TO APPLICATION */}
               <TouchableOpacity onPress={() => router.push('/apply')}>
                 <Text style={styles.signUp}>
-                  Don't have an account? <Text style={styles.signUpLink}>Apply!</Text>
+                  Don't have a code? <Text style={styles.signUpLink}>Apply!</Text>
                 </Text>
               </TouchableOpacity>
             </>
