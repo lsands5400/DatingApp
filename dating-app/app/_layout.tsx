@@ -22,29 +22,22 @@ function RootNavigator() {
 
   return (
     <Stack>
-       {/* SHOW TABS ONLY WHEN LOGGED OUT */}
-      {!isLoggedIn && (
+      {/* Protected app routes */}
+      <Stack.Protected guard={isLoggedIn}>
+        <Stack.Screen name="(app)" options={{ headerShown: false }} />
+        <Stack.Screen name="profile" options={{ headerShown: false }} />
+      </Stack.Protected>
+
+      {/* Auth routes (only when logged out) */}
+      <Stack.Protected guard={!isLoggedIn}>
+        <Stack.Screen name="login" options={{ headerShown: false }} />
+        <Stack.Screen name="signup" options={{ headerShown: false }} />
+        <Stack.Screen name="apply" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      )}
-
-      {/* PUBLIC AUTH SCREENS */}
-      {/* {!isLoggedIn && (
-        <>
-          <Stack.Screen name="login" options={{ headerShown: false }} />
-          <Stack.Screen name="signup" options={{ headerShown: false }} />
-        </>
-      )} */}
-
-      {/* PROTECTED ROUTES WHEN LOGGED IN */}
-      {isLoggedIn && (
-        <>
-          <Stack.Screen name="(app)" options={{ headerShown: false }} />
-          <Stack.Screen name="profile" options={{ headerShown: false }} />
-        </>
-      )}
+      </Stack.Protected>
 
       {/* Other routes */}
-      <Stack.Screen name="not-found" />
       <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
     </Stack>
   )

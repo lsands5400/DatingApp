@@ -117,7 +117,7 @@ export default function SignUpScreen() {
               {/* SIGN UP BUTTON */}
               <TouchableOpacity
                 style={styles.button}
-                onPress={handleSubmit} 
+                onPress={() => handleSubmit()} 
                 disabled={!isValid}
               >
                 <Text style={styles.buttonText}>Sign Up</Text>
