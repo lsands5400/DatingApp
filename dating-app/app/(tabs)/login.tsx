@@ -122,7 +122,7 @@ export default function LoginScreen() {
               {/* LOGIN BUTTON */}
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.push('/profile')}
+                onPress={() => handleSubmit}
                 disabled={!isValid}
               >
                 <Text style={styles.buttonText}>Login</Text>
