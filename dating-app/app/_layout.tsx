@@ -28,12 +28,12 @@ function RootNavigator() {
       )}
 
       {/* PUBLIC AUTH SCREENS */}
-      {!isLoggedIn && (
+      {/* {!isLoggedIn && (
         <>
           <Stack.Screen name="login" options={{ headerShown: false }} />
           <Stack.Screen name="signup" options={{ headerShown: false }} />
         </>
-      )}
+      )} */}
 
       {/* PROTECTED ROUTES WHEN LOGGED IN */}
       {isLoggedIn && (
