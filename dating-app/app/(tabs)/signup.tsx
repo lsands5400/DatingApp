@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
   },
 
   inputContainer: {
-    width: '40%',
+    width: '75%',
     height: 50,
     backgroundColor: '#f1f1f1',
     borderRadius: 10,

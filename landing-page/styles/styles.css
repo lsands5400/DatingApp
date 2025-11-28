@@ -1,0 +1,275 @@
+:root {
+  --main-bg-color: #c98c8cff;
+  --accent-color: #6A1212;
+  --text-color: #333;
+  --header-height: 120px;
+  --header-paddingT: 10px;
+  --header-paddingB: 150px;
+  --font-stack: "baskerville";
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 100px;
+  text-align: center;
+  color: var(--accent-color);
+  margin: 0;
+  padding: 20px 0;
+  padding-top: 100px;
+  font-family: 'baskerville'
+}
+
+button {
+    border-radius: 20px;
+    border: none;
+    background-color: var(--accent-color);
+    padding: 20px;
+    color: white;
+    align-self: 'center';
+    margin: 50px;
+    font-family: 'baskerville';
+}
+
+h2 {
+  font-size: 50px;
+  text-align: 'left';
+  color: var(--accent-color);
+  margin: 0;
+  padding: 20px 100px;
+  font-family: 'baskerville'
+}
+
+p, summary, ul {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  font-family: 'baskerville';
+  padding: 20px 100px;
+  width: '70%';
+}
+
+details {
+    text-align: center;
+    background-color: white; 
+    width: 100%; 
+    border-radius: 20px; 
+    opacity: 0.7;
+    margin: 20px;
+}
+li {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  font-family: 'baskerville';
+  width: '70%';
+}
+
+
+
+img {
+    padding: 20px;
+}
+
+html {
+  background-color: var(--main-bg-color);
+  overflow-y: scroll;
+}
+
+.content {
+  width: 65%;
+  margin: 100px auto;
+  background-color: var(--main-bg-color);
+  justify-content: center;
+  text-align: center;
+}
+
+/* header */
+.header{
+      /*width: 100%;
+      
+      border: none;
+      
+      /*padding-top: var(--header-paddingT);   /* space inside the header box */
+      /*padding-bottom: var(--header-paddingB);
+      height: var(--header-height);
+      margin: 0;
+      box-sizing: border-box;       /* include padding in height */
+      justify-content: center; /* centers horizontally */
+      margin: 0 calc(50% - 50vw);
+      margin-top: 0;
+      padding: 60px;
+      text-align: center;
+      background: #6A1212;
+      color: white;
+      font-size: 30px;
+      padding-top: var(--header-paddingT);
+      padding-bottom: var(--header-paddingB); 
+      display: flex; 
+      align-items: center;
+      }
+
+/* Add extra space between header and page content */
+main {
+  padding-top: var(--header-height); /* pushes content below header */
+}
+
+
+h3 {
+  font-size: 100px;
+  text-align: center;
+  color: var(--main-bg-color);
+  margin: 0;
+  padding: 20px 0;
+  padding-top: 100px;
+  font-family: 'baskerville'
+}
+
+h4 {
+  font-size: 50px;
+  text-align: 'left';
+  color: var(--main-bg-color);
+  margin: 0;
+  padding: 20px 100px;
+  font-family: 'baskerville'
+}
+
+a {
+    color: var(--accent-color);
+}
+
+.navBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--accent-color);
+}
+
+.navBar button {
+  float: right;
+  font-size: 30px;
+  padding: 10px 30px;
+  opacity: 0.7;
+  background-color: white;
+  color: var(--accent-color);
+  margin: 10px 10px;
+  border-radius: 40px;
+}
+
+/* The Sign Up Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.signUpModal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  background: none;
+}
+
+
+/* Tab Styles */
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #9D552B;
+  background-color: #CB9B80;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #9D552B;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #CB9B80;
+  border-top: none;
+}
+
+#btnsignup {
+  border: none;
+  background: none;
+  display: block;
+  color: #DFB920;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.navBar li a {
+  display: block;
+  color: #DFB920;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.navBar li {
+  float: right;
+}
