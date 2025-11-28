@@ -5,8 +5,6 @@ import { Text, Pressable, StyleSheet, Linking, View, ScrollView } from 'react-na
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 
-// import { Card } from '@rneui/themed'; // TODO: whats wrong with this
-
 export default function Apply() {
   const handlePress = () => {
     Linking.openURL('https://forms.gle/NVtUXh6VPqJM83rZ8');

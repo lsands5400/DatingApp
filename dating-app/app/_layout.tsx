@@ -25,15 +25,15 @@ function RootNavigator() {
       {/* Protected app routes */}
       <Stack.Protected guard={isLoggedIn}>
         <Stack.Screen name="(app)" options={{ headerShown: false }} />
-        <Stack.Screen name="profile" options={{ headerShown: false }} />
+        {/* <Stack.Screen name="profile" options={{ headerShown: false }} /> */}
       </Stack.Protected>
 
       {/* Auth routes (only when logged out) */}
       <Stack.Protected guard={!isLoggedIn}>
-        <Stack.Screen name="login" options={{ headerShown: false }} />
+        {/* <Stack.Screen name="login" options={{ headerShown: false }} />
         <Stack.Screen name="signup" options={{ headerShown: false }} />
         <Stack.Screen name="apply" options={{ headerShown: false }} />
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} /> */}
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack.Protected>
 
