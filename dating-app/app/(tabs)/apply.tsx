@@ -12,7 +12,7 @@ export default function Apply() {
   return (
     <ScrollView>
       <ThemedView style={styles.container}>
-        <View style={{padding:20}}>
+        <View style={{padding:20, paddingTop: 100}}>
           <ThemedText
               type="title"
               style={{
@@ -22,7 +22,7 @@ export default function Apply() {
           </ThemedText>
         </View>
 
-        <View style={{padding:20}}>
+        <View style={{padding:20, width: '90%'}}>
           <ThemedText>Are you interesting?</ThemedText>
           <ThemedText>Are you looking for someone who will intellectually stimulate you?</ThemedText>
           <ThemedText>Are you looking for someone peer-reviewed?</ThemedText>
@@ -41,7 +41,7 @@ export default function Apply() {
             </ThemedText>
         </View>
 
-        <View style={{padding:20, width:600}}>
+        <View style={{padding:20, width: '90%'}}>
           <ThemedText>
             Currently, the application is a Google form. You can fill out the Google form and 
             answer all the questions. Once you submit, a member of our team will review your submission. 
@@ -57,7 +57,7 @@ export default function Apply() {
             </ThemedText>
         </View>
 
-        <View style={{padding:20, width:600}}>
+        <View style={{padding:20, width:'90%'}}>
           <ThemedText>
             You don't have to be a Nobel Laureate to apply. We simply want to ensure that we are presenting
             serious options to you and our other users. We want some proof that you have passions and goals
@@ -65,6 +65,12 @@ export default function Apply() {
             a hidden talent, or a grand plan for your life. The application offers a place to submit supplementary 
             files and links, so feel free to upload art or websites or documents.
           </ThemedText>
+        </View>
+        
+        <View style={{padding:20}}>
+          <Pressable style={[styles.button, styles.buttonOpen]}>
+            <Text style={styles.textStyle} onPress={handlePress}>Submit an application</Text>
+          </Pressable>
         </View>
 
         <Image

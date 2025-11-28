@@ -13,7 +13,7 @@ export default function index() {
 
       // Header info
       headerBackgroundColor={{ light: '#6A1212', dark: '#6A1212' }}
-      headerImage={
+      headerImage={ // TODO: Make and upload logo with words on top
         <Image
           source={require('@/assets/images/logo-darkm.png')}
           style={{ width: 500, height: 500, alignSelf: 'center', opacity: 0.2 }}
@@ -23,9 +23,8 @@ export default function index() {
         <ThemedText
           type="title"
           style={{ fontFamily: 'baskerville', textAlign: 'center', opacity: 0.5, 
-            width: '100%', height: '100%', justifyContent: 'center', fontSize: 150}}
+            width: '50%', height: '50%', justifyContent: 'center', fontSize: 150}}
         >
-        Status
         </ThemedText>
       }>
 
@@ -44,11 +43,12 @@ export default function index() {
         <ThemedText>
           This is our new dating app for impressive people.
           It's still in development, but the main features will include
-          <ul>
+          {/* TODO: FIX THIS */}
+          {/* <ul>
           <li>In-app games to help start conversations</li>
           <li>Post-date surveys to help us match users</li>
           <li>A human-centered application process</li>
-          </ul>
+          </ul> */}
         </ThemedText>
         <ExternalLink href="https://www.tiktok.com/@status_dating">
           <ThemedText type="link">Follow us on TikTok</ThemedText>
