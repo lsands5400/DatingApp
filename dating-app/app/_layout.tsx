@@ -22,18 +22,26 @@ function RootNavigator() {
 
   return (
     <Stack>
-      {/* Protected app routes */}
-      <Stack.Protected guard={isLoggedIn}>
-        <Stack.Screen name="(app)" options={{ headerShown: false }} />
-        <Stack.Screen name="profile" options={{ headerShown: false }} />
-      </Stack.Protected>
-
-      {/* Auth routes (only when logged out) */}
-      <Stack.Protected guard={!isLoggedIn}>
-        <Stack.Screen name="login" options={{ headerShown: false }} />
-        <Stack.Screen name="signup" options={{ headerShown: false }} />
+       {/* SHOW TABS ONLY WHEN LOGGED OUT */}
+      {!isLoggedIn && (
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      </Stack.Protected>
+      )}
+
+      {/* PUBLIC AUTH SCREENS */}
+      {!isLoggedIn && (
+        <>
+          <Stack.Screen name="login" options={{ headerShown: false }} />
+          <Stack.Screen name="signup" options={{ headerShown: false }} />
+        </>
+      )}
+
+      {/* PROTECTED ROUTES WHEN LOGGED IN */}
+      {isLoggedIn && (
+        <>
+          <Stack.Screen name="(app)" options={{ headerShown: false }} />
+          <Stack.Screen name="profile" options={{ headerShown: false }} />
+        </>
+      )}
 
       {/* Other routes */}
       <Stack.Screen name="not-found" />
